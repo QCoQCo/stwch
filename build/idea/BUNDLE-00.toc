@@ -1,0 +1,3 @@
+([('idea',
+   '/Users/qsus/Desktop/ExeX/C/PYC/stopwatch/dist/idea',
+   'EXECUTABLE')],)

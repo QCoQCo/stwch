@@ -1,5 +1,6 @@
 import tkinter as tk
 from datetime import datetime, timedelta
+from ToDo_list import ToDoListApp
 
 class Stopwatch:
     def __init__(self,R):
@@ -21,6 +22,8 @@ class Stopwatch:
         self.sT_b.pack(side="left",padx=5)
         self.r_b=tk.Button(self.B,text="Reset",command=self.rs)
         self.r_b.pack(side="left",padx=5)
+        self.td_b=tk.Button(self.B,text="ToDo_list",command=self.otd)
+        self.td_b.pack(side="left",padx=5)
         self.flow()
         self.rt()
     def st(self):
@@ -48,6 +51,11 @@ class Stopwatch:
         r_t=datetime.now().strftime("%H:%M:%S")
         self.c_t.config(text=r_t)
         self.R.after(1000,self.rt)
+    def otd(self):
+        t_w=tk.Toplevel(self.R)
+        t_w.title("To-Do List")
+        t_w.configure(bg='black')
+        ToDoListApp(t_w)
 if __name__=="__main__":
     R=tk.Tk()
     R.configure(bg='black')
